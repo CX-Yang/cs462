@@ -16,15 +16,15 @@ all: key init recv
 key: key.o
 	g++ -o key key.o
 key.o : vansladj_KeyDistributionCenter.cc
-	g++ -c -std=c++11 vansladj_KeyDistributionCenter.cc -o key.o -Wall
+	g++ -c -std=c++11 KeyDistributionCenter.cc -o key.o -Wall
 init : init.o
 	g++ -o init init.o
 init.o : vansladj_InitiatorA.cc
-	g++ -c -std=c++11 vansladj_InitiatorA.cc -o init.o -Wall
+	g++ -c -std=c++11 InitiatorA.cc -o init.o -Wall
 recv : recv.o
 	g++ -o recv recv.o
 recv.o : vansladj_ResponderB.cc
-	g++ -c -std=c++11 vansladj_ResponderB.cc -o recv.o -Wall
+	g++ -c -std=c++11 ResponderB.cc -o recv.o -Wall
 clean :
 	$(RM) *.o
 	$(RM) key
@@ -43,7 +43,7 @@ NOTE: Order is critical here.
  between int and recv)
 
 4. Init will now prompt for what either a string or a file path
-5. Recv will store the result in a file in /tmp/vansladj
+5. Recv will store the result in a file in /tmp/networks
 
 To enable debugging output:
 uncomment #define DEBUG in InitiatorA.cc, KeyDistributionCenter.cc, and ResponderB.cc
