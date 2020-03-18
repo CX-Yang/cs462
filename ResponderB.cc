@@ -103,7 +103,7 @@ int main() {
 	if (myFNonce2String.compare(fNonce2) == 0) {
 		// Read what A has sent
 		size_t chunks = readIntEncrypted(clientSocket, bfKs);
-		ofstream savefile("/tmp/vansladj", ios::trunc | ios::binary | ios::out);
+		ofstream savefile("/tmp/networks", ios::trunc | ios::binary | ios::out);
 
 		if (savefile.is_open()) {
 			while (chunks) {
